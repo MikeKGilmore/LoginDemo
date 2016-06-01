@@ -1,0 +1,25 @@
+﻿<div ng-controller="loginCreateCtrl as loginCreate">
+    <div>Create a login.  Name, e-mail, and password are required.</div>
+    <br />
+    <div><label>Name:</label><input type="text" ng-model="loginCreate.model.name" />*</div>
+    <div><label>e-Mail:</label><input type="email" ng-model="loginCreate.model.email" />*</div>
+    <div><label>Password:</label><input type="password" ng-model="loginCreate.model.password" />*</div>
+    <div><label>Age:</label><input type="number" ng-model="loginCreate.model.age" /></div>
+    <div><label>Gender:</label><select ng-model="loginCreate.model.gender"><option value="Male">Male</option><option value="Female">Female</option></select></div>
+    <div><label>About Me:</label><textarea ng-model="loginCreate.model.about"></textarea></div>
+    <br />
+    <button type="button" class="btn btn-primary" ng-click="loginCreate.create()">Create!</button>
+    <button type="button" class="btn btn-secondary" ng-click="loginCreate.cancel()">Cancel</button>
+
+    <div ng-show="loginCreate.model.debug">
+        <br style="clear:both" />
+        <div><label>Name: </label>{{loginCreate.model.name}}</div>
+        <div><label>e-Mail:</label>{{loginCreate.model.email}}</div>
+        <div><label>Password:</label>{{loginCreate.model.password}}</div>
+        <div><label>Age:</label>{{loginCreate.model.age}}</div>
+        <div><label>Gender:</label>{{loginCreate.model.gender}}</div>
+        <div><label>About Me:</label>{{loginCreate.model.about}}</div>
+        <div><label>Origin:</label>{{loginCreate.model.originUrl}}</div>
+    </div>
+    
+</div>

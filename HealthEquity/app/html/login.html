@@ -1,0 +1,10 @@
+﻿<div ng-controller="loginCtrl as login">
+    <div ng-show="login.model.errorMsg.length">
+        {{login.model.errorMsg}}
+    </div>
+    <div><label>e-Mail:</label><input type="text" ng-model="login.model.email"/>*</div>
+    <div><label>Password:</label><input type="password" ng-model="login.model.password" />*</div>
+
+    <button type="button" class="btn btn-primary" ng-click="login.login()">Log In</button>
+    <button type="button" class="btn btn-secondary" ng-click="login.cancel()">Cancel</button>
+</div>
