@@ -1,10 +1,10 @@
 ﻿(function () {
     "use strict";
 
-    angular.module('app', []);
+    angular.module('app', ['ui.router', 'ngResource']);
 
     angular
-        .module('app', ['ui.router'])
+        .module('app')
         .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
             $stateProvider.state('homeState', {
                 url: '/',

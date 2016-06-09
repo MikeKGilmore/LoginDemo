@@ -3,5 +3,36 @@
         Here you can view all of the accounts and enable/disable them as desired.  You can also search for logins matching the specified criteria.
     </div>
     <br />
+    <div id="filterDiv">
+        <label>Filter Logins</label>
+        <br />
+        <span>
+            <label>Name:&nbsp;</label><input type="text" ng-model="admin.model.search.name" />
+            <label>e-mail:&nbsp;</label><input type="email" ng-model="admin.model.search.email" />
+            <label>Gender:&nbsp;</label><select ng-model="admin.model.search.gender"><option value="">Any</option><option value="Male">Male</option><option value="Female">Female</option></select>
+        </span>
+        <button type="button" class="btn" ng-click="admin.search()">Filter</button>
+    </div>
+    <br />
+    <div ng-show="admin.model.showLoadingNotice">
+        Loading logins.  Please wait...
+    </div>
+    <div>
+        <span><label>Disabled?</label><label>ID</label><label>Name</label><label>e-mail</label><label>Password</label><label>Age</label><label>Gender</label><label>About</label><label>Origin</label></span>
+        <div ng-repeat="login in admin.model.logins">
+            <span>
+                <input type="checkbox" ng-model="login.Disabled" ng-checked="login.Disabled" />
+                <label>{{login.Id}}</label>
+                <label>{{login.Name}}</label>
+                <label>{{login.Email}}</label>
+                <label>**************</label>
+                <label>{{login.Age}}</label>
+                <label>{{login.Gender}}</label>
+                <label>{{login.About}}</label>
+                <label>{{login.OriginUrl}}</label>
+            </span>
+        </div>
+        </div>
+    <br />
     <button type="button" class="btn btn-secondary" ng-click="admin.done()">Done</button>
 </div>
